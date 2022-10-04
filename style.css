@@ -27,3 +27,17 @@ li:hover {
     width: 400px;
     height: 44px;
 }
+
+.deleteBtn {
+    width: 24px;
+    height: 24px;
+    background-image: url("icons8-multiply-26.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: white;
+    margin-left: 10%;
+}
+
+.deleteBtn:hover {
+    background-color: gray;
+}
