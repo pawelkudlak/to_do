@@ -5,6 +5,8 @@ function addNewTask() {
     const divNewTask = document.createElement("li");                //utworzenie diva
 
     divNewTask.setAttribute("id", idCreator);
+    divNewTask.setAttribute("class", "inComplete");
+    divNewTask.setAttribute("onclick", `completeTask(${idCreator})`);
 
     const tasksArea = document.getElementById("tasksList");         //oznaczenie miejsca taska
     const task = document.createTextNode(taskData);                 //dodanie treści zadania
@@ -31,46 +33,7 @@ function deleteTask(id) {
     taskToDelete.parentNode.removeChild(taskToDelete);
 }
 
-// const tasks = document.getElementsByTagName("LI");
-// for (const i = 0; i < tasks.length; i++) {
-//     const deleteButton = document.createElement("BUTTON");
-//     deleteButton.innerText = "X";
-//     deleteButton.className = "deleteButton";
-//     tasks[i].appendChild(deleteButton);
-// }
-
-// const deleteItem = document.getElementsByClassName("deleteButton");
-
-// for (const i = 0; i < close.length; i++) {
-//     close[i].onclick = function () {
-//         const element = this.parentElement;
-//         element.style.display = "none";
-//     }
-// }
-
-// function addNewTask() {
-//     const list = document.createElement("li");
-//     const taskFromForm = document.getElementById("toDoThing").value;
-//     const addedTask = document.createTextNode(taskFromForm);
-
-//     list.appendChild(addedTask);
-
-//     if (taskFromForm === '') {
-//         alert("You don't add anything, try again!");
-//     } else {
-//         document.getElementById("tasksList").appendChild(list);
-//     }
-//     document.getElementById("toDoThing").value = "";
-
-//     const deleteButton = document.createElement("BUTTON");
-//     deleteButton.innerText = "X";
-//     deleteButton.className = "deleteButton";
-//     list.appendChild(deleteButton);
-
-//     for (const i = 0; i < close.length; i++) {
-//         close[i].onclick = function () {
-//             const div = this.parentElement;
-//             div.style.display = "none";
-//         }
-//     }
-// }
+function completeTask(id) {
+    const task = document.getElementById(id);
+    task.classList.toggle("complete");
+}
